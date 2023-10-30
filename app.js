@@ -5,15 +5,10 @@ const app = express();
 require("dotenv").config();
 
 // middleware
-
+app.use(express.static("./public"));
 app.use(express.json());
 
 //routes
-
-app.get("/hello", (req, res) => {
-  res.send("task manager app");
-});
-
 app.use("/api/v1/task", tasksRoute);
 
 const port = 5000;
